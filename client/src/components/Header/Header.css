@@ -1,0 +1,39 @@
+/*************
+General styling / Elements
+**************/
+
+/*************
+Images
+**************/
+
+/*************
+Buttons / Links / li
+**************/
+
+.header-link-logo {
+  color: var(--wht);
+}
+
+/*************
+Typography
+**************/
+
+.header-logo {
+  font-size: 1.5rem;
+}
+
+/*************
+Layout
+**************/
+
+.header {
+  background-color: var(--blk);
+}
+
+.header-container {
+  padding: 1rem 0;
+}
+
+/*************
+Media Queries
+**************/

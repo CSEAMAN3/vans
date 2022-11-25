@@ -1,0 +1,36 @@
+/*************
+General styling / Elements
+**************/
+
+/*************
+Images
+**************/
+
+/*************
+Buttons / Links / li
+**************/
+
+/*************
+Typography
+**************/
+
+.footer-text {
+  font-size: 1.5rem;
+  color: var(--wht);
+}
+
+/*************
+Layout
+**************/
+
+.footer {
+  background-color: var(--blk);
+}
+
+.footer-container {
+  padding: 1rem 0;
+}
+
+/*************
+Media Queries
+**************/

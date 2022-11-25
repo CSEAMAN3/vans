@@ -1,0 +1,40 @@
+/*************
+General styling / Elements
+**************/
+
+/*************
+Images
+**************/
+
+/*************
+Buttons / Links / li / inputs
+**************/
+
+input[type="text"] {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.update-van-btn {
+  display: block;
+}
+
+/*************
+Typography
+**************/
+
+/*************
+Layout
+**************/
+
+.update-van-form-section {
+  min-height: 70vh;
+}
+
+.van-details-container {
+  padding: 1rem 0;
+}
+
+/*************
+Media Queries
+**************/

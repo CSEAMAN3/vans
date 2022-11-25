@@ -1,0 +1,36 @@
+/*************
+General styling / Elements
+**************/
+
+/*************
+Images
+**************/
+
+/*************
+Buttons / Links / li
+**************/
+
+/*************
+Typography
+**************/
+
+.home-text {
+  margin-bottom: 1rem;
+}
+
+/*************
+Layout
+**************/
+
+.home-main {
+  background-color: var(--wht);
+}
+
+.home-main-container {
+  padding: 1rem 0;
+  min-height: 80vh;
+}
+
+/*************
+Media Queries
+**************/

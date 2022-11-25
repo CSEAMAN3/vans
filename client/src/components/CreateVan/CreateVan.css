@@ -1,0 +1,44 @@
+/*************
+General styling / Elements
+**************/
+
+/*************
+Images
+**************/
+
+/*************
+Buttons / Links / li
+**************/
+
+input[type="text"] {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 260px;
+}
+
+input[type="checkbox"] {
+  margin: 0 1rem 1rem 0;
+}
+
+.create-form-btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/*************
+Typography
+**************/
+
+.form-title {
+  margin-bottom: 0.5rem;
+}
+
+/*************
+Layout
+**************/
+
+/*************
+Media Queries
+**************/

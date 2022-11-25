@@ -1,0 +1,31 @@
+/*************
+General styling / Elements
+**************/
+
+/*************
+Images
+**************/
+
+/*************
+Buttons / Links / li
+**************/
+
+/*************
+Typography
+**************/
+
+.van-name {
+  color: var(--blk);
+}
+
+/*************
+Layout
+**************/
+
+.van-container {
+  margin-bottom: 2rem;
+}
+
+/*************
+Media Queries
+**************/
