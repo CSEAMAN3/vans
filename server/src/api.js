@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const Vans = require("./models/vans");
 const cors = require("cors");
 const bp = require("body-parser");
+const serverless = require("serverless-http");
 const axios = require("axios");
 require("dotenv").config();
 
@@ -22,7 +23,7 @@ app.get("/", (request, response) => {
 });
 
 //retrieve all vans
-app.get("/vans", async (request, response) => {
+app.get("/.netlify/functions/api/vans", async (request, response) => {
   try {
     const allVans = await Vans.find();
     response.status(200).json(allVans);
@@ -33,7 +34,7 @@ app.get("/vans", async (request, response) => {
 });
 
 //retrieve a specific van
-app.get("/vans/:id", async (request, response) => {
+app.get("/.netlify/functions/api/vans/:id", async (request, response) => {
   try {
     const theVan = await Vans.findOne({ _id: request.params.id });
     response.status(200).json(theVan);
@@ -44,7 +45,7 @@ app.get("/vans/:id", async (request, response) => {
 });
 
 //add a new Van
-app.post("/vans", async (request, response) => {
+app.post("/.netlify/functions/api/vans", async (request, response) => {
   try {
     const newVan = await Vans.create(request.body);
     response.status(200).json(newVan);
@@ -55,7 +56,7 @@ app.post("/vans", async (request, response) => {
 });
 
 //Edit a Van
-app.put("/vans/:id", async (request, response) => {
+app.put("/.netlify/functions/api/vans/:id", async (request, response) => {
   try {
     const vanToUpdate = request.params.id;
     const updatedVan = await Vans.updateOne({ _id: vanToUpdate }, request.body);
@@ -67,10 +68,21 @@ app.put("/vans/:id", async (request, response) => {
 });
 
 //delete a van
-app.delete("/vans/:id", async (request, response) => {
+app.delete("/.netlify/functions/api/vans/:id", async (request, response) => {
   const vanToDelete = request.params.id;
   const deletedVan = await Vans.deleteOne({ _id: vanToDelete });
   response.status(200).json(deletedVan);
 });
 
-app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
+// app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
+
+// new Netlify way to start the server
+const handler = serverless(app);
+
+// we use this so the handler can use async (that mongoose uses)
+module.exports.handler = async (event, context) => {
+  // you can do any code here
+  const result = await handler(event, context);
+  // and here
+  return result;
+};

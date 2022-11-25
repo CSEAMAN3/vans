@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import axios from "axios";
+import { API_URL } from "../../api";
 
 import Vans from "../../components/Vans/Vans";
 import CreateVan from "../../components/CreateVan/CreateVan";
@@ -19,7 +20,7 @@ export default function Home() {
   }, []);
 
   const getVans = async () => {
-    const API = `http://localhost:8080/vans`;
+    const API = `${API_URL}/vans`;
     const res = await axios.get(API);
     console.log(res.data);
     setVans(res.data);
@@ -35,7 +36,7 @@ export default function Home() {
 
   const createNewVan = async (event) => {
     event.preventDefault();
-    const API = `http://localhost:8080/vans`;
+    const API = `https://vans-db-api.netlify.app/.netlify/functions/api/vans`;
     const res = await axios.post(API, createForm);
     //reset the input fields
     setCreateForm({

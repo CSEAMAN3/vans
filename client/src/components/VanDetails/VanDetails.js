@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./VanDetails.css";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-
+import { API_URL } from "../../api";
 export default function VanDetails() {
   const [van, setVan] = useState({});
   const [formUpdate, setFormUpdate] = useState({
@@ -19,7 +19,7 @@ export default function VanDetails() {
   const { id } = useParams();
 
   const getVanDetails = async () => {
-    const API = `http://localhost:8080/vans/${id}`;
+    const API = `${API_URL}/vans/${id}`;
 
     const res = await axios.get(API);
     console.log(res);
@@ -43,7 +43,7 @@ export default function VanDetails() {
       }
     }
 
-    const API = `http://localhost:8080/vans/${id}`;
+    const API = `${API_URL}/vans/${id}`;
     const res = await axios.put(API, bodyToSend);
     console.log(res);
     getVanDetails();
